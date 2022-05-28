@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <div class="card mb-3" style="max-width: 800px;">
+        <div class="row g-0">
+            <div class="col-md-4" id="img">
+    
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h2 class="title">Add new playlist!!!</h2>
+                    <div class="container-fluid">
+                        <form action="" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {%for field in form %}
+                            <div class="form-group">
+                                <div class="col-sm-offset-4 col-sm-10">
+                                    <span class="text-danger small">{{field.errors}}</span>
+                                </div>
+                                <label class="control-label col-sm-4">{{field.label_tag}}</label>
+                                <div>{{field}}</div>
+                            </div>
+                            {%endfor%}
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+    
+                                    <button type="submit" class="btn btn-success"
+                                        style="background-color: blueviolet;border:0ch">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.title }}
+        {{ form.user }}
+        {{ form.songs }}
+        <input class="btn" type="submit" name="Create User" value="Sign In">
+    </form> -->
+
+
+</body>
+
+</html>
